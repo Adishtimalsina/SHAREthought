@@ -13,8 +13,6 @@ const Sidebar = ({ selectedTab, setTab }) => {
   const navigate = useNavigate();
   const [profileName, setUserName] = useState("");
 
-  console.log("error in side bar");
-
   //get username
   useEffect(() => {
     if (Array.isArray(Name)) {
