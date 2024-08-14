@@ -9,7 +9,7 @@ const dataBaseConnection = async () => {
       })
       .then(() => console.log("Database connected"));
   } catch (error) {
-    console.log(error);
+    console.log(error.message);
   }
 };
 
