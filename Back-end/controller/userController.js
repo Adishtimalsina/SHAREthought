@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const userModel = require("../Models/userModel.js");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
 //update likes of the posts
