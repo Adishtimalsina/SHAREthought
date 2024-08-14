@@ -5,10 +5,11 @@ const dataBaseConnection = async () => {
     await mongoose
       .connect(process.env.CONNECTION_STRING, {
         useNewUrlParser: true,
+        useUnifiedTopology: true,
       })
       .then(() => console.log("Database connected"));
   } catch (error) {
-    console.log("unsuccessful Database connection");
+    console.log(error);
   }
 };
 
