@@ -1,6 +1,4 @@
 import logo from "../store/logo.png";
-import Header from "./Header";
-import Footer from "./Footer";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useState } from "react";
@@ -20,7 +18,7 @@ const SignUp = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8000/api/v1/create", user, {
+      .post(`${import.meta.env.VITE_BASE_URL}/create`, user, {
         headers: {
           "Content-Type": "application/json",
         },

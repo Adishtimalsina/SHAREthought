@@ -8,7 +8,6 @@ import { deletes, setPostID } from "../features/thoughts/authSlice";
 
 const Profile = ({ deleteMenu }) => {
   const dispatch = useDispatch();
-  const deleteAction = useSelector((state) => state.deleteMenu);
   const posts = useSelector((state) => state.singleTweets);
 
   console.log("error in profile page.");

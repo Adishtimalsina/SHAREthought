@@ -20,7 +20,7 @@ const CreatePost = () => {
     }
 
     await axios
-      .post("http://localhost:8000/api/v1/post", emoji, {
+      .post(`${import.meta.env.VITE_BASE_URL}/post`, emoji, {
         withCredentials: true,
         headers: {
           "Content-Type": "text/plain",
