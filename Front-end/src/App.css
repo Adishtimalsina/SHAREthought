@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&family=Poetsen+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&family=Nanum+Gothic+Coding&family=Poetsen+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&family=Domine:wght@400..700&family=Nanum+Gothic+Coding&family=Poetsen+One&display=swap');
+.body{
+  position:relative;
+  min-height:80vh;
+  display: flex;
+  width: 100%;
+  background: rgb(64,62,87);
+  background: linear-gradient(90deg, rgba(64,62,87,1) 3%, rgba(84,77,244,1) 46%, rgba(36,64,97,1) 100%, rgba(156,156,207,1) 100%);
+}
+
+.content{
+  display: inline-block;
+  font-family: "Poetsen One", sans-serif;
+  position: relative;
+  /* border: 3px solid black; */
+  border-radius: 15px;
+  margin: 1% 1%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.postList{
+  font-family: "Poetsen One", sans-serif;
+  width: 100%;
+  height: 80%;
+  overflow-y: scroll;
+ 
+}
+
+.card-top{
+  font-family: "Poetsen One", sans-serif;
+  display: flex;
+ justify-content: space-between;
+ 
+}
+.nav-bar{
+  height: fit-content;
+  font-size: larger;
+  display: flex;
+  font-family: "Domine", serif;
+  margin: 5px;
+  border-radius: 20px;
+  background: rgb(1,0,22);
+  background: linear-gradient(90deg, rgba(1,0,22,1) 7%, rgba(8,7,28,1) 39%, rgba(19,19,57,1) 100%, rgba(12,61,119,1) 100%);
+  
+}
+.menu-items{
+  font-size: larger;
+  margin-top: 10px;
+  justify-content: space-around;
+}
+
+
+.text-area{
+  font-family: "Poetsen One", sans-serif;
+  font-size:large;
+  position: relative;
+  display: flex;
+  width: 90%;
+  border: 2px solid gray;
+  border-radius: 15px;
+  margin: 0 2%;
+  padding: 10px;
+  size: 35px;
+  min-height: 300px;
+}
+
+.emoji{
+  position: absolute;
+}
+
+.select-emoji{
+ align-items: center;
+ display: flex;
+ width: 100%;
+ margin-left: 3%;
+}
+
+.thoughts{
+  display: flex;
+}
+
+.post{
+  margin: 25px;
+  height: 50px;
+  width: 200px;
+
+}
+.header{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  max-height: 200px;
+  padding: 2%;
+  background: rgb(1,0,22);
+  background: linear-gradient(90deg, rgba(1,0,22,1) 7%, rgba(14,14,33,1) 25%, rgba(3,102,217,1) 100%);
+}
+
+.logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 300px;  
+  max-height: 300px;
+}
+
+@media only screen and (max-width: 589px){
+  .logo{
+    display: flex;
+    justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+   width: 100px;
+   height: 70px;
+   }
+}
+
+
+.deletePost{
+  display: flex;
+  color: red;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poetsen One", sans-serif;
+  font-size: x-large;
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgb(55, 11, 215);
+  background-color: rgb(59, 9, 195);
+  border-radius: 10px;
+  height: 300px;
+  width: 500px;
+}
+
+.buttons{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.deletes{
+  position: relative;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+/* div.card-top:nth-child(3){
+  position: relative;
+  justify-content: flex-end;
+  display: flex;
+  float: right;
+  background-color: red;
+} */
+ .card-bottom{
+  position: relative;
+  display: flex;
+ align-items: center;
+  justify-content: space-between;
+ }
+
+.login{
+  font-family: "Poetsen One", sans-serif;
+  font-size:large;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: rgb(64,62,87);
+  background: linear-gradient(90deg, rgba(64,62,87,1) 3%, rgba(84,77,244,1) 46%, rgba(36,64,97,1) 100%, rgba(156,156,207,1) 100%);
+
+}
+.loginContainer{
+  display: flex;
+  position:relative;
+  border-radius: 20px;
+  background: rgb(55, 11, 215);
+  background-color: rgb(59, 9, 195);
+  height: fit-content;
+  max-width: 90%;
+}
+.loginLeft{
+  position: relative;
+  width: 60%;
+  background: rgb(55, 11, 215);
+  background-color: rgb(59, 9, 195);
+  border-radius: 30px;
+}
+.loginRight{
+  background-color: white;
+  width: 40%;
+  justify-content: center;
+  border-radius: 20px;
+ 
+}
+
+.loginForm{
+  position: relative;
+  display: grid;
+  margin: 20%; 
+}
+
+.footer {
+  position: relative;
+  height:15vh;
+  margin-top: 110px;
+  width: 100%;
+  background: #3586ff;
+  min-height: 500px;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.social-icon,
+.menu {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.social-icon__item,
+.menu__item {
+  list-style: none;
+}
+
+.social-icon__link {
+  font-size: 2rem;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+}
+.social-icon__link:hover {
+  transform: translateY(-10px);
+}
+
+.menu__link {
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+  text-decoration: none;
+  opacity: 0.75;
+  font-weight: 300;
+}
+
+.menu__link:hover {
+  opacity: 1;
+}
+
+.footer p {
+  color: #fff;
+  margin: 15px 0 10px 0;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.wave {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url("https://i.ibb.co/wQZVxxk/wave.png");
+  background-size: 1000px 100px;
+}
+
+.wave#wave1 {
+  z-index: 1000;
+  opacity: 1;
+  bottom: 0;
+  animation: animateWaves 4s linear infinite;
+}
+
+.wave#wave2 {
+  z-index: 999;
+  opacity: 0.5;
+  bottom: 10px;
+  animation: animate 4s linear infinite !important;
+}
+
+.wave#wave3 {
+  z-index: 1000;
+  opacity: 0.2;
+  bottom: 15px;
+  animation: animateWaves 3s linear infinite;
+}
+
+.wave#wave4 {
+  z-index: 999;
+  opacity: 0.7;
+  bottom: 20px;
+  animation: animate 3s linear infinite;
+}
+
+@keyframes animateWaves {
+  0% {
+    background-position-x: 1000px;
+  }
+  100% {
+    background-positon-x: 0px;
+  }
+}
+
+@keyframes animate {
+  0% {
+    background-position-x: -1000px;
+  }
+  100% {
+    background-positon-x: 0px;
+  }
+}
+
+.contact{
+  position: relative;
+  font-size: x-large;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, rgba(64,62,87,1) 3%, rgba(84,77,244,1) 46%, rgba(36,64,97,1) 100%, rgba(156,156,207,1) 100%);
+}
+
+.contactForm{
+  /* background-color: white; */
+  background: rgb(55, 11, 215);
+  background-color: rgb(59, 9, 195);
+  border-radius: 15px;
+  color:black;
+  font-family: "Poetsen One", sans-serif;
+  display: grid;
+  min-height: 700px;
+  min-width: 700px;
+  padding: 5%;
+}
+.head{
+  text-align: center;
+}
+.sendMessage{
+  text-align: center;
+}
