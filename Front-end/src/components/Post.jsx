@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import style from "./Post.module.css";
 import { FcLike } from "react-icons/fc";
 import { useSelector, useDispatch } from "react-redux";

@@ -24,7 +24,7 @@ const Sidebar = ({ selectedTab, setTab }) => {
 
   const logOut = async (req, res) => {
     await axios
-      .get("http://localhost:8000/api/v1/logout", {
+      .get(`${import.meta.env.VITE_BASE_URL}/logout`, {
         withCredentials: true,
         headers: {
           "Content-Type": "application/json",
