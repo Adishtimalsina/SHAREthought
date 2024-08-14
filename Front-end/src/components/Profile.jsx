@@ -11,6 +11,8 @@ const Profile = ({ deleteMenu }) => {
   const deleteAction = useSelector((state) => state.deleteMenu);
   const posts = useSelector((state) => state.singleTweets);
 
+  console.log("error in profile page.");
+
   useEffect(() => {
     dispatch(getUserThoughts());
   }, [dispatch]);

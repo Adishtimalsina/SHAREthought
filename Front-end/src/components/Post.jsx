@@ -9,6 +9,8 @@ const Post = () => {
   const dispatch = useDispatch();
   const posts = useSelector((state) => state.tweets);
 
+  console.log("error in post page");
+
   useEffect(() => {
     dispatch(getAllThoughts());
   }, [dispatch]);
