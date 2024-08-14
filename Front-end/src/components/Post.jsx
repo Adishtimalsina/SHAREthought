@@ -9,6 +9,7 @@ const Post = () => {
   const dispatch = useDispatch();
   const posts = useSelector((state) => state.tweets);
 
+  console.log(posts);
   console.log("error in post page");
 
   useEffect(() => {
