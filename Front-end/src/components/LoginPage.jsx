@@ -1,6 +1,4 @@
 import logo from "../store/logo.png";
-import Header from "./Header";
-import Footer from "./Footer";
 import { useNavigate, Link } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch } from "react-redux";

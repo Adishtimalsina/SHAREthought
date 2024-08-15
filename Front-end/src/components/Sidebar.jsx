@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Cookies } from "react-cookie";
 
 const Sidebar = ({ selectedTab, setTab }) => {
   const Name = useSelector((state) => state.singleTweets);
@@ -31,11 +32,9 @@ const Sidebar = ({ selectedTab, setTab }) => {
         },
       })
       .then((response) => {
-        console.log(response.data.message);
         toast.success(response.data.message);
         window.localStorage.removeItem("token");
         window.localStorage.removeItem("user");
-
         if (response.data.status === "success") {
           setTimeout(() => {
             navigate("/posts");

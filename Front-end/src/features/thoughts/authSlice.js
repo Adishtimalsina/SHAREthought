@@ -117,10 +117,15 @@ export const authSlice = createSlice({
       .addCase(deletePost.pending, (state) => {
         return { ...state, status: "pending" };
       })
-      .addCase(deletePost.fulfilled, (state) => {
+      .addCase(deletePost.fulfilled, (state, action) => {
+        const id = action.payload.deletedPost._id;
+        const newTweets = state.singleTweets.filter(
+          (tweet) => tweet._id !== id
+        );
         return {
           ...state,
           status: "success",
+          singleTweets: newTweets,
           deleteMenu: !state.deleteMenu,
         };
       })

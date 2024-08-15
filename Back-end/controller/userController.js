@@ -230,6 +230,11 @@ const postThoughts = async (req, res) => {
 const deletePost = async (req, res) => {
   try {
     const postID = req.body;
+    //finding user
+    const findUser = await userModel.findOne({ _id: req.user });
+    //finding post
+    const findPost = findUser.thoughtString.id(postID);
+
     const user = await userModel.updateOne(
       { _id: req.user },
       {
@@ -246,6 +251,7 @@ const deletePost = async (req, res) => {
     return res.status(200).json({
       status: "success",
       message: "Post deleted successfully",
+      deletedPost: findPost,
     });
   } catch (error) {
     return res.status(400).json({

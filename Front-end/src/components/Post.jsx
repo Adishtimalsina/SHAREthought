@@ -19,7 +19,6 @@ const Post = () => {
     dispatch(updateLikes({ id: Value, likes: initialLikes + 1 }))
       .unwrap()
       .then((response) => {
-        console.log(response.message);
         if (response.message === "liked") {
           toast.success("You liked the post!");
         } else {

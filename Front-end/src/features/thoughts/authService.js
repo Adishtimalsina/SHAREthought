@@ -3,7 +3,7 @@ import axios from "axios";
 export const loginUser = async (userData) => {
   const response = axios
     .post(`${import.meta.env.VITE_BASE_URL}/login`, userData, {
-      withCredentials: true,
+      withCredentials: "true",
       headers: {
         "Content-Type": "application/json",
       },

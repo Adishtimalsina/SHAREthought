@@ -28,7 +28,6 @@ const CreatePost = () => {
       })
       .then((response) => {
         //saving token in local storage
-        console.log(response.data.status);
         toast.success(response?.data?.message, {
           autoClose: 2000,
         });
