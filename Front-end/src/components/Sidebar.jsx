@@ -7,7 +7,6 @@ import { useSelector } from "react-redux";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Cookies } from "react-cookie";
 
 const Sidebar = ({ selectedTab, setTab }) => {
   const Name = useSelector((state) => state.singleTweets);
