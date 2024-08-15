@@ -1,4 +1,5 @@
 import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { deletes, deletePost } from "../features/thoughts/authSlice";
 import { useDispatch, useSelector } from "react-redux";
 

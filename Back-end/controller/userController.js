@@ -145,9 +145,10 @@ const loginUser = async (req, res) => {
       return res
         .status(200)
         .cookie("token", token, {
+          expiresIn: process.env.EXPIRE_IN,
           httpOnly: true,
           secure: true,
-          sameSite: "None",
+          SameSite: "None",
         })
         .json({
           status: "success",
@@ -177,7 +178,7 @@ const logoutUser = (req, res) => {
     res.clearCookie("token", {
       httpOnly: true,
       secure: true,
-      sameSite: "None",
+      SameSite: "None",
     });
     return res.status(200).json({
       status: "success",
