@@ -147,7 +147,7 @@ const loginUser = async (req, res) => {
         .cookie("token", token, {
           expiresIn: process.env.EXPIRE_IN,
           httpOnly: true,
-          // secure: true,
+          secure: true,
           SameSite: "None",
         })
         .json({
@@ -177,7 +177,7 @@ const logoutUser = (req, res) => {
     }
     res.clearCookie("token", {
       httpOnly: true,
-      // secure: true,
+      secure: true,
       SameSite: "None",
     });
     return res.status(200).json({
