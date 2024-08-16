@@ -145,10 +145,14 @@ const loginUser = async (req, res) => {
       return res
         .status(200)
         .cookie("token", token, {
-          expiresIn: process.env.EXPIRE_IN,
+          expires: new Date(
+            Date.now() + parseInt(process.env.EXPIRE_IN) * 1000
+          ),
           httpOnly: true,
           secure: true,
           SameSite: "None",
+          domain: ".onrender.com",
+          path: "/",
         })
         .json({
           status: "success",
@@ -175,10 +179,12 @@ const logoutUser = (req, res) => {
         message: "You are not logged in",
       });
     }
+    res.cookies = "";
     res.clearCookie("token", {
       httpOnly: true,
-      secure: true,
+      // secure: true,
       SameSite: "None",
+      path: "/",
     });
     return res.status(200).json({
       status: "success",
