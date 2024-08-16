@@ -29,3 +29,8 @@ app.listen(port, () => {
 app.get("/", (req, res) => {
   res.send("hello");
 });
+
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send("Something broke!");
+});
