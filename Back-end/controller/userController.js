@@ -87,7 +87,7 @@ const getUser = async (req, res) => {
       data: user,
     });
   } catch (error) {
-    res.status(400).json({
+    return res.status(400).json({
       status: "fail",
       message: error.message,
     });
@@ -151,7 +151,6 @@ const loginUser = async (req, res) => {
           httpOnly: true,
           secure: true,
           SameSite: "None",
-          domain: ".onrender.com",
           path: "/",
         })
         .json({
@@ -162,7 +161,7 @@ const loginUser = async (req, res) => {
         });
     }
   } catch (error) {
-    res.status(400).json({
+    return res.status(400).json({
       status: "fail",
       message: error.message,
     });
@@ -184,7 +183,6 @@ const logoutUser = (req, res) => {
       httpOnly: true,
       // secure: true,
       SameSite: "None",
-      path: "/",
     });
     return res.status(200).json({
       status: "success",
