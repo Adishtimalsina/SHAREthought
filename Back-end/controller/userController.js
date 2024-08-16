@@ -144,13 +144,13 @@ const loginUser = async (req, res) => {
     {
       return res
         .status(200)
-        .cookie("token", token, {
-          expiresIn: new Date(
+        .cookies("token", token, {
+          expires: new Date(
             Date.now() + parseInt(process.env.EXPIRE_IN) * 1000
           ),
           httpOnly: true,
           secure: true,
-          sameSite: "None",
+          SameSite: "None",
         })
         .json({
           status: "success",
