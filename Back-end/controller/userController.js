@@ -144,7 +144,7 @@ const loginUser = async (req, res) => {
     {
       return res
         .status(200)
-        .cookies("token", token, {
+        .cookie("token", token, {
           expires: new Date(
             Date.now() + parseInt(process.env.EXPIRE_IN) * 1000
           ),
