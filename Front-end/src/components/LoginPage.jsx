@@ -26,7 +26,7 @@ const LoginPage = () => {
     }
     document.cookie = `${name}=${
       value || ""
-    }${expires}; path=/; SameSite=None; secure`;
+    }${expires}; path=/; SameSite=None; secure HttpOnly`;
   };
 
   const handleSubmit = async (e) => {

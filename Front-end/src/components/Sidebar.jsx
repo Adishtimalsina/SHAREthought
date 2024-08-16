@@ -31,10 +31,10 @@ const Sidebar = ({ selectedTab, setTab }) => {
         },
       })
       .then((response) => {
-        toast.success(response.data.message);
         document.cookie.removeItem("token");
         window.localStorage.removeItem("token");
         window.localStorage.removeItem("user");
+        toast.success(response.data.message);
         if (response.data.status === "success") {
           setTimeout(() => {
             navigate("/posts");
