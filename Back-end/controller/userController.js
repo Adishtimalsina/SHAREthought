@@ -150,7 +150,7 @@ const loginUser = async (req, res) => {
           ),
           httpOnly: true,
           secure: true,
-          SameSite: "None",
+          sameSite: "None",
         })
         .json({
           status: "success",
