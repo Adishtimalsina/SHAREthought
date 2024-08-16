@@ -17,11 +17,24 @@ const LoginPage = () => {
     setUser((values) => ({ ...values, [name]: value }));
   };
 
+  const setCookie = (name, value, days) => {
+    let expires = "";
+    if (days) {
+      const date = new Date();
+      date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+      expires = `; expires=${date.toUTCString()}`;
+    }
+    document.cookie = `${name}=${
+      value || ""
+    }${expires}; path=/; SameSite=None; secure`;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     dispatch(login(user))
       .unwrap()
       .then((response) => {
+        setCookie("token", response.token, 7);
         localStorage.setItem("token", response.token);
         toast.success(response?.message, {
           autoClose: 1500,
