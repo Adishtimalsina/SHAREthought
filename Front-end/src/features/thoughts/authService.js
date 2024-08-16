@@ -1,4 +1,5 @@
 import axios from "axios";
+import { toast } from "react-toastify";
 
 export const loginUser = async (userData) => {
   const response = axios
@@ -39,6 +40,11 @@ export const getAllThoughts = async () => {
 
 //getting single user data
 export const getSingleUserData = async () => {
+  const token = window.localStorage.getItem("token");
+
+  if (!token) {
+    return toast.error("you are not logged in, please login to see the post");
+  }
   const response = await axios
     .get(`${import.meta.env.VITE_BASE_URL}/posts`, {
       withCredentials: true,
