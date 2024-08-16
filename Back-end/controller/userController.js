@@ -177,7 +177,7 @@ const logoutUser = (req, res) => {
         message: "You are not logged in",
       });
     }
-    res.cookies = "";
+    res.cookies = " ";
     res.clearCookie("token", {
       httpOnly: true,
       // secure: true,
