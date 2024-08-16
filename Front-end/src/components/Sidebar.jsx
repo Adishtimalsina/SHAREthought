@@ -32,6 +32,7 @@ const Sidebar = ({ selectedTab, setTab }) => {
       })
       .then((response) => {
         toast.success(response.data.message);
+        document.cookie = " ";
         window.localStorage.removeItem("token");
         window.localStorage.removeItem("user");
         if (response.data.status === "success") {
