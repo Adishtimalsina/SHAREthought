@@ -147,9 +147,9 @@ const loginUser = async (req, res) => {
         .status(200)
         .cookie("token", token, {
           httpOnly: true,
-          Secure: true,
-          signedCookie: true,
-          SameSite: "None",
+          secure: true,
+          domain: ".onrender.com",
+          sameSite: "None",
         })
         .json({
           status: "success",
@@ -178,7 +178,7 @@ const logoutUser = (req, res) => {
     }
     res.clearCookie("token", {
       httpOnly: true,
-      Secure: true,
+      secure: true,
       SameSite: "None",
     });
     return res.status(200).json({
