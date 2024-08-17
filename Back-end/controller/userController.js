@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const userModel = require("../Models/userModel.js");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const { signedCookie } = require("cookie-parser");
 
 //update likes of the posts
 const updateLike = async (req, res) => {
@@ -147,6 +148,7 @@ const loginUser = async (req, res) => {
         .cookie("token", token, {
           httpOnly: true,
           Secure: true,
+          signedCookie: true,
           SameSite: "None",
         })
         .json({
