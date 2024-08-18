@@ -3,8 +3,7 @@ import style from "./Post.module.css";
 import { FcLike } from "react-icons/fc";
 import { useSelector, useDispatch } from "react-redux";
 import { getAllThoughts, updateLikes } from "../features/thoughts/authSlice.js";
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 
 const Post = () => {
   const dispatch = useDispatch();
@@ -35,7 +34,6 @@ const Post = () => {
   // const { postList } = useContext(Data);
   return posts.map((thought) => (
     <div className={`${style.cards}  shadow-lg`} key={thought._id}>
-      <ToastContainer />
       <div className="card">
         <div className="card-body">
           <div className="cardss" style={{ display: "flex" }}>

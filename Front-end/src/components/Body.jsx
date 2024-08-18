@@ -2,7 +2,6 @@ import { useState } from "react";
 import DeletePost from "./DeletePost";
 import Sidebar from "./Sidebar";
 import { useSelector } from "react-redux";
-import { ToastContainer } from "react-toastify";
 
 const Body = ({ toogleNav, children }) => {
   const [selectedTab, setTab] = useState("Home");
@@ -10,7 +9,6 @@ const Body = ({ toogleNav, children }) => {
 
   return (
     <div className="body">
-      <ToastContainer />
       {toogleNav && <Sidebar selectedTab={selectedTab} setTab={setTab} />}
       {children}
       {/* {selectedTab === "Create post" && (

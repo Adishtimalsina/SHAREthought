@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { ToastContainer } from "react-toastify";
 import App from "./App.jsx";
 import {
   RouterProvider,
@@ -36,7 +35,6 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Provider store={store}>
-      <ToastContainer />
       <RouterProvider router={router} />
     </Provider>
   </React.StrictMode>

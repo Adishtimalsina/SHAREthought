@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const SignUp = () => {
   const navigate = useNavigate();
@@ -43,6 +43,7 @@ const SignUp = () => {
   };
   return (
     <>
+      <ToastContainer />
       <div className="login">
         <center className="loginContainer shadow-lg">
           <div className="loginLeft">

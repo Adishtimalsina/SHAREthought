@@ -4,8 +4,6 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
-import "react-toastify/dist/ReactToastify.css";
-import { ToastContainer } from "react-toastify";
 import Body from "./components/Body.jsx";
 
 function App() {
@@ -17,7 +15,6 @@ function App() {
 
   return (
     <>
-      <ToastContainer />
       <Header showMenu={toogleNavBar} toogle={toogleNav} />
       <Body toogleNav={toogleNav}>
         <Outlet />

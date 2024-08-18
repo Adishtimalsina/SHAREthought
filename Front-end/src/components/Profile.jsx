@@ -5,8 +5,7 @@ import { MdDeleteForever } from "react-icons/md";
 import { useSelector, useDispatch } from "react-redux";
 import { getUserThoughts } from "../features/thoughts/authSlice";
 import { deletes, setPostID } from "../features/thoughts/authSlice";
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 
 const Profile = ({ deleteMenu }) => {
   const dispatch = useDispatch();
@@ -52,7 +51,6 @@ const Profile = ({ deleteMenu }) => {
   if (Array.isArray(posts)) {
     return (
       <div className="postList">
-        <ToastContainer />
         {posts.length === 0 ? (
           <h2
             className="postList"

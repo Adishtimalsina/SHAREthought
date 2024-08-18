@@ -2,9 +2,8 @@ import { IoMdHome } from "react-icons/io";
 import { CiCirclePlus } from "react-icons/ci";
 import { CgProfile } from "react-icons/cg";
 import { useNavigate, Link } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import { useSelector } from "react-redux";
-import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
@@ -53,7 +52,6 @@ const Sidebar = ({ selectedTab, setTab }) => {
 
   return (
     <div className="d-flex flex-column flex-shrink-0 p-3  nav-bar">
-      <ToastContainer />
       <div className="d-flex align-items-center me-md-auto text-white text-decoration-none">
         <span className="fs-3 p-4">Main Menu</span>
       </div>

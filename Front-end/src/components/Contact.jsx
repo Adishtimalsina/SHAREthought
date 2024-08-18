@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 const Contact = () => {
@@ -42,7 +42,6 @@ const Contact = () => {
   };
   return (
     <div className="contact">
-      <ToastContainer />
       <div className="contactForm shadow-lg">
         <div className="head">
           <h1>Contact Us</h1>
