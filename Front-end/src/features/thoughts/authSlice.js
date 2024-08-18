@@ -59,9 +59,9 @@ export const deletePost = createAsyncThunk(
 //update user likes
 export const updateLikes = createAsyncThunk(
   "auth/likes",
-  async ({ id, likes }, thunkAPI) => {
+  async ({ userID, id, likes }, thunkAPI) => {
     try {
-      return await authService.updateLikes(id, likes);
+      return await authService.updateLikes(userID, id, likes);
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }

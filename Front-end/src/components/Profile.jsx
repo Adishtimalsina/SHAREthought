@@ -11,7 +11,6 @@ import "react-toastify/dist/ReactToastify.css";
 const Profile = ({ deleteMenu }) => {
   const dispatch = useDispatch();
   const posts = useSelector((state) => state.singleTweets);
-  console.log(posts.status);
 
   useEffect(() => {
     dispatch(getUserThoughts());

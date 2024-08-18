@@ -84,12 +84,12 @@ const deleteUserPost = async (id) => {
 
 //update user likes
 
-const updateLikes = async (id, likes) => {
+const updateLikes = async (userID, id, likes) => {
   const token = window.localStorage.getItem("token");
   const response = await axios
     .post(
       `${import.meta.env.VITE_BASE_URL}/likeUpdate`,
-      { postId: id, likes: likes },
+      { userID: userID, postId: id, likes: likes },
       {
         withCredentials: true,
         headers: {

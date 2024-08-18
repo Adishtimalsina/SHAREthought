@@ -8,11 +8,12 @@ const { signedCookie } = require("cookie-parser");
 //update likes of the posts
 const updateLike = async (req, res) => {
   try {
-    const { postId, likes } = req.body;
-    const user = req.user;
+    const { userID, postId, likes } = req.body;
+
+    console.log(userID);
 
     const post = await userModel.updateOne(
-      { _id: req.user, "thoughtString._id": postId },
+      { _id: userID, "thoughtString._id": postId },
       { $set: { "thoughtString.$.like": likes } },
       {
         $project: {
@@ -68,6 +69,7 @@ const getUser = async (req, res) => {
       },
       {
         $project: {
+          userID: "$_id",
           userName: "$userName",
           like: "$thoughtString.like",
           _id: "$thoughtString._id",

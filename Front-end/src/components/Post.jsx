@@ -14,10 +14,12 @@ const Post = () => {
     dispatch(getAllThoughts());
   }, [dispatch]);
 
-  const handleLike = (Value, initialLikes) => {
+  const handleLike = (userid, Value, initialLikes) => {
     // dispatch(setPostID(Value));
     // dispatch(setPostID(Value));
-    dispatch(updateLikes({ id: Value, likes: initialLikes + 1 }))
+    dispatch(
+      updateLikes({ userID: userid, id: Value, likes: initialLikes + 1 })
+    )
       .unwrap()
       .then((response) => {
         if (response.message === "liked") {
@@ -54,7 +56,9 @@ const Post = () => {
           <FcLike
             size={30}
             className="likeButton"
-            onClick={() => handleLike(thought._id, thought.like)}
+            onClick={() =>
+              handleLike(thought.userID, thought._id, thought.like)
+            }
           />
           {"       "}
           <span className={style.likeCount}>{thought.like}</span>

@@ -23,6 +23,7 @@ const CreatePost = () => {
       .post(`${import.meta.env.VITE_BASE_URL}/post`, emoji, {
         withCredentials: true,
         headers: {
+          Authorization: `Bearer ${token}`,
           "Content-Type": "text/plain",
         },
       })
