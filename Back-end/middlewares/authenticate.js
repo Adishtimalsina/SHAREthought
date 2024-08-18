@@ -76,21 +76,48 @@ const checkUserPost = async (req, res, next) => {
     }
   } catch (error) {
     const ratings = error.response.candidates;
-    ratings.map((rate) => {
-      rate.safetyRatings.map((category) => {
+    let responseSent = false;
+
+    ratings.forEach((rate) => {
+      rate.safetyRatings.forEach((category) => {
         if (
           category.probability === "HIGH" ||
           category.probability === "MEDIUM"
         ) {
-          return res.status(400).json({
-            status: "fail",
-            message: findIssueMessage(category.category),
-          });
+          if (!responseSent) {
+            responseSent = true;
+            return res.status(400).json({
+              status: "fail",
+              message: findIssueMessage(category.category),
+            });
+          }
         }
       });
     });
+
+    if (!responseSent) {
+      return res.status(500).json({
+        status: "error",
+        message: "An unexpected error occurred",
+      });
+    }
   }
 };
+
+// ratings.map((rate) => {
+//   rate.safetyRatings.map((category) => {
+//     if (
+//       category.probability === "HIGH" ||
+//       category.probability === "MEDIUM"
+//     ) {
+//       return res.status(400).json({
+//         status: "fail",
+//         message: findIssueMessage(category.category),
+//       });
+//     }
+//   });
+// });
+
 module.exports = {
   postAuthenticate,
   checkingPost,
