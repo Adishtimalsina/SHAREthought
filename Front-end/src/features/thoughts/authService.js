@@ -63,10 +63,12 @@ export const getSingleUserData = async () => {
 };
 
 const deleteUserPost = async (id) => {
+  const token = window.localStorage.getItem("token");
   const response = await axios
     .post(`${import.meta.env.VITE_BASE_URL}/delete`, id, {
       withCredentials: true,
       headers: {
+        Authorization: `Bearer ${token}`,
         "Content-Type": "text/plain",
       },
     })
@@ -83,6 +85,7 @@ const deleteUserPost = async (id) => {
 //update user likes
 
 const updateLikes = async (id, likes) => {
+  const token = window.localStorage.getItem("token");
   const response = await axios
     .post(
       `${import.meta.env.VITE_BASE_URL}/likeUpdate`,
@@ -90,6 +93,7 @@ const updateLikes = async (id, likes) => {
       {
         withCredentials: true,
         headers: {
+          Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
         },
       }
