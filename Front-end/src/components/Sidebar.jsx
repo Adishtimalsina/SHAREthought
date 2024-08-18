@@ -23,10 +23,16 @@ const Sidebar = ({ selectedTab, setTab }) => {
   });
 
   const logOut = async (req, res) => {
+    const token = window.localStorage.getItem("token");
+    if (!token) {
+      return toast.error("you are not logged in");
+    }
+
     await axios
       .get(`${import.meta.env.VITE_BASE_URL}/logout`, {
         withCredentials: true,
         headers: {
+          Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
         },
       })

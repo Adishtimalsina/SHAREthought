@@ -18,8 +18,8 @@ const {
 } = require("../middlewares/authenticate.js");
 
 //post router
-router.post("/likeUpdate", checkingPost, updateLike);
-router.get("/posts", checkingPost, getUserPost);
+router.post("/likeUpdate", checkingPost, updateLike); //update like router
+router.get("/posts", checkingPost, getUserPost); //getting single user posts
 router.post("/create", postThought);
 router.get("/user", getUser);
 router.post("/login", loginUser);

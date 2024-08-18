@@ -115,6 +115,7 @@ const postThought = async (req, res) => {
 const loginUser = async (req, res) => {
   try {
     const { email, password } = req.body;
+
     if (!email || !password) {
       return res.status(400).json({
         status: "fail",
@@ -148,7 +149,7 @@ const loginUser = async (req, res) => {
         .cookie("token", token, {
           httpOnly: true,
           secure: true,
-          domain: ".onrender.com",
+          domain: "sharethought-frontend.onrender.com",
           sameSite: "None",
         })
         .json({
@@ -169,7 +170,9 @@ const loginUser = async (req, res) => {
 //user logOut
 const logoutUser = (req, res) => {
   try {
-    const token = req.cookies.token;
+    const usertoken = req.headers["authorization"];
+    const token = usertoken.split("Bearer")[1].trim();
+
     if (!token) {
       return res.status(400).json({
         status: "fail",
@@ -179,7 +182,7 @@ const logoutUser = (req, res) => {
     res.clearCookie("token", {
       httpOnly: true,
       secure: true,
-      SameSite: "None",
+      sameSite: "None",
     });
     return res.status(200).json({
       status: "success",

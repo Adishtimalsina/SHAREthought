@@ -5,8 +5,7 @@
   "main": "server.js",
   "type": "commonjs",
   "scripts": {
-    "dev":"nodemon server.js",
-    "build": "npm i"
+    "dev":"nodemon server.js"
   },
   "author": "Adish",
   "license": "ISC",

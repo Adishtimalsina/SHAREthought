@@ -3,7 +3,14 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 const jwt = require("jsonwebtoken");
 
 const postAuthenticate = async (req, res, next) => {
-  const token = req.cookies.token;
+  // const token = req.cookies.token;
+
+  const usertoken = req.headers["authorization"];
+  let token = usertoken.split("Bearer")[1].trim();
+
+  if (token === "null") {
+    token = false;
+  }
 
   if (!token) {
     return res.status(401).json({ message: "unauthorized" });
@@ -15,7 +22,13 @@ const postAuthenticate = async (req, res, next) => {
 };
 
 const checkingPost = async (req, res, next) => {
-  const token = req.cookies.token;
+  // const token = req.cookies.token;
+  const usertoken = req.headers["authorization"];
+  let token = usertoken.split("Bearer")[1].trim();
+
+  if (token === "null") {
+    token = false;
+  }
 
   if (!token) {
     return res.status(401).json({

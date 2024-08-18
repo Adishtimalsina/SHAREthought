@@ -42,13 +42,14 @@ export const getAllThoughts = async () => {
 export const getSingleUserData = async () => {
   const token = window.localStorage.getItem("token");
 
-  if (!token) {
-    return toast.error("you are not logged in, please login to see the post");
-  }
+  // if (!token) {
+  //   return toast.error("you are not logged in, please login to see the post");
+  // }
   const response = await axios
     .get(`${import.meta.env.VITE_BASE_URL}/posts`, {
       withCredentials: true,
       headers: {
+        Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
       },
     })

@@ -11,8 +11,7 @@ import "react-toastify/dist/ReactToastify.css";
 const Profile = ({ deleteMenu }) => {
   const dispatch = useDispatch();
   const posts = useSelector((state) => state.singleTweets);
-  const token = localStorage.getItem("token");
-  console.log(token);
+  console.log(posts.status);
 
   useEffect(() => {
     dispatch(getUserThoughts());
@@ -34,7 +33,7 @@ const Profile = ({ deleteMenu }) => {
   //   console.log(values);
   // };
 
-  if (posts && posts.status === "fails") {
+  if (posts.status === "fails") {
     return (
       <>
         <h1
