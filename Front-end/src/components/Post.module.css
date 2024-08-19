@@ -11,10 +11,22 @@
     border-radius: 20px;
     margin: 2% 2%;
     justify-content: space-around;
+    animation: fade linear both ;
+    animation-timeline: view(50px,50px);
   }
+
 
   .likeCount{
     font-size: large;
     text-align: center;
     font-weight: 700;
+  }
+
+  @keyframes fade {
+    from{
+      opacity: 0;
+    }
+    to{
+      opacity: 1;
+    }
   }
